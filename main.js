@@ -94,6 +94,7 @@ function inHtml(page, data, status, noreload){
   if (!noreload){
     document.title = data.title;
     document.body.querySelector('#title').innerHTML = data.title;
+    document.body.querySelector('#show-more').innerHTML = "";
 
     var content = '';
     var topNav = '';
