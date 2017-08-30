@@ -283,6 +283,8 @@ function authozire(auth){
     }
     if (type == 2){
        typeName = '<font style="color:green;">исполнитель</font>';
+       upUserBalance = ' (<a href="javascript:ref_balance();">обнов.</a>)';
+
     }
 
       var rounded = function(number){
@@ -345,6 +347,11 @@ function login(){
 //Запрос на выход
 function logout(){
   sendPost('logout=1', 'logout');
+}
+
+//Обновить баланс
+function ref_balance(){
+  sendPost('ref_balance=1', 'ref_balance');
 }
 
 //Запрос на demo пополнение счета
@@ -419,6 +426,12 @@ function actionPost(result){
   if (result.action == 'up-balance-true'){
     alert('Будем считать, что Вы прошли процедуру оплаты.');
     succAlert('<b>DEMO счет успешно пополнен!</b>');
+    route(currentPage, true);
+  }
+
+  //Обновить счет
+  if (result.action == 'ref-balance-true'){
+    succAlert('<b>Обновлено.</b>');
     route(currentPage, true);
   }
 
