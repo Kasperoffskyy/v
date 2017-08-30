@@ -34,6 +34,7 @@ if ($order){
   echo json_encode([
     "auth" => $auth,
     "title" => $order['title'],
+    "_csrf" => $_csrf,
     "content" => $order
   ]);
 
