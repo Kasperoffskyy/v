@@ -37,6 +37,7 @@ function setAuthUser($id, $type, $email){
   $token = md5('auth_token'.md5(time().$id.$type.$email.rand(1,1000).rand(1,1000)));
   setcookie("auth_token", $token, time() + 3600 * 10);
   return $token;
+
 }
 
 //CSRF
@@ -44,7 +45,7 @@ if ($_POST){
 
   //Проверка CSRF
   if ($_POST['_csrf'] != $_csrf){
-
+    $_POST = false;
     $error[] = 'Ошибка CSRF';
   }
 }
@@ -52,7 +53,9 @@ if ($_POST){
   if (($_POST && !$_POST['_csrf']) || !$_csrf){
 
     //Создадим CSRF для следующего запроса
-    setcookie("_csrf", md5(time().$_SERVER['REMOTE_ADDR']), time() + 3600 * 10);
+    $_csrf = md5(time().$_SERVER['REMOTE_ADDR']);
+    setcookie("_csrf", $_csrf, time() + 3600 * 10);
+
   }
 
 ?>
