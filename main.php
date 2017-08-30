@@ -7,7 +7,7 @@ define('enter', true);
 //Все они соответствуют названиям страниц в /pages
 $route = array(
   'login', 'register', 'all_orders', 'select_order', 'show_more',
-  'logout', 'new_order', 'order_action', 'up_balance'
+  'logout', 'new_order', 'order_action', 'up_balance', 'ref_balance'
 );
 
 //Разбираем запрос из REQUEST_URI, выявляем к какой страницы идет обращение
