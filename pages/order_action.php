@@ -5,7 +5,7 @@ defined('enter') or die();
 $data = $_POST;
 
 //Взять заказ (только для исполнителей)
-$data['take-order'] = intval($data['take-order'];
+$data['take-order'] = intval($data['take-order']);
 
 if ($data['take-order'] && $auth['type'] == 2){
 
