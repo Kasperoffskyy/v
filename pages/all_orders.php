@@ -19,6 +19,13 @@ if (!$orders = redisAction(false, 'all_orders'.$pageParam, 'get')){
 
 }
 
+//Избавляемся от ненужных html символов
+foreach ($orders as &$order){
+  foreach ($order as &$a){
+   $a = htmlspecialchars($a);
+  }
+}
+
 if (!$orders){
     $orders = false;
 }
