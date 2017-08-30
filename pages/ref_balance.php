@@ -10,6 +10,10 @@ if ($auth['type'] == 2){
     "action" => "ref-balance-true"
   ]);
 
+}else{
+    echo json_encode([
+    "action" => "back"
+  ]);
 }
 
 ?>
