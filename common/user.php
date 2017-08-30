@@ -37,7 +37,6 @@ function setAuthUser($id, $type, $email){
   $token = md5('auth_token'.md5(time().$id.$type.$email.rand(1,1000).rand(1,1000)));
   setcookie("auth_token", $token, time() + 3600 * 10);
   return $token;
-
 }
 
 //CSRF
