@@ -5,7 +5,9 @@ defined('enter') or die();
 $data = $_POST;
 
 //Взять заказ (только для исполнителей)
-if (intval($data['take-order']) && $auth['type'] == 2){
+$data['take-order'] = intval($data['take-order'];
+
+if ($data['take-order'] && $auth['type'] == 2){
 
   $successful = false;
 
@@ -34,8 +36,14 @@ if (intval($data['take-order']) && $auth['type'] == 2){
 
 }
 
+
+
+
 //Выбрать исполнителя (только для заказчиков)
-if (intval($data['select-performer']) && intval($data['order_id']) && $auth['type'] == 1){
+$data['select-performer'] = intval($data['select-performer']);
+$data['order_id'] = intval($data['order_id']);
+
+if ($data['select-performer'] && $data['order_id'] && $auth['type'] == 1){
 
   $successful = false;
 
