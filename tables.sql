@@ -66,8 +66,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `type`, `name`, `email`, `password`, `auth_token`, `balance`, `last_order_req`) VALUES
-(1, 1, 'demo1', 'demo1@demo1.demo1', 'faaee7b23c60a22302f8106f1c7c0388', '', 0.000, 0),
-(2, 2, 'demo2', 'demo2@demo2.demo2', '1540f0758b42fc8f37d677d95fe4abaa', 'e0ff8c9e1b202a7d3cf124f6e252475b', 0.000, 0);
+(1, 1, 'demo1', 'demo1@demo1.demo1', '63ee451939ed580ef3c4b6f0109d1fd0', '', 0.000, 0),
+(2, 2, 'demo2', 'demo2@demo2.demo2', '63ee451939ed580ef3c4b6f0109d1fd0', '', 0.000, 0);
 
 -- --------------------------------------------------------
 
